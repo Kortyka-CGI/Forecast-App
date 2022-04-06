@@ -52,6 +52,9 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## Trainingssteps
 
 [] Layout erstellen
+
 [] Wetter API einbinden
+
 [] Wetter anhand einer Stadt aktuallisieren
+
 [] optional - State Management
