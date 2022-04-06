@@ -45,4 +45,13 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Training
+## Forecast Layout
+
+![layout](https://github.com/Kortyka-CGI/Forecast-App/blob/main/forecast.png?raw=true)
+
+## Trainingssteps
+
+[] Layout erstellen
+[] Wetter API einbinden
+[] Wetter anhand einer Stadt aktuallisieren
+[] optional - State Management
