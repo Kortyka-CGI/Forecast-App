@@ -51,6 +51,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Trainingssteps
 
+- Komponente(n) erstellen 
+
 - Layout erstellen
 
 - Wetter API einbinden
