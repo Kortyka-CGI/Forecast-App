@@ -51,10 +51,12 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Trainingssteps
 
-[] Layout erstellen
+- Layout erstellen
 
-[] Wetter API einbinden
+- Wetter API einbinden
 
-[] Wetter anhand einer Stadt aktuallisieren
+- Wetter anhand einer Stadt aktuallisieren
 
-[] optional - State Management
+- optional - Eigener Hook ( für den API Call)
+
+- optional - State Management
