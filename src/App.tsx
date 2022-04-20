@@ -40,26 +40,22 @@ const App = () =>{
   const API_KEY = "2TZZmkPaQkapTbWJ2HniwjGpNi5bVTAE";
   const weekDay = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
   const month = ["January", "February", "March", "April", "May", "June", "july", "August", "October", "November", "December"];
-  //const attributeUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
-  //const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`;
-  //const url = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${localizationKey}?apikey=${API_KEY}`;
-  //const attributeUrl = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API_KEY}&q=${city}`;
 
   const fetchAttribute = async (city: string) =>{
     const responseAtt =  await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API_KEY}&q=${city}`);
 
-    setLocalizationKey(responseAtt.data[0].Key)
+    setLocalizationKey(responseAtt.data[0].Key);
     setCityName(responseAtt.data[0].EnglishName);
-    setLocalizationArea(responseAtt.data[0].AdministrativeArea.ID)
-    if(!Error){
-      console.log("in It "+responseAtt);
-    } 
+    setLocalizationArea(responseAtt.data[0].AdministrativeArea.ID);
   }
   const fetchData = async (localizationKey: string) =>{
     const weather = await axios.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${localizationKey}?apikey=${API_KEY}`);
     //setWeatherInfo(weather.data.DailyForecasts) 
     console.log(weather.data)
-     setWeatherInfo(weather.data.DailyForecasts.map((dayliF: { Temperature: { Minimum: { Value: any; Unit: any; }; Maximum: { Value: any; }; }; Day: { Icon: any; IconPhrase: any; HasPrecipitation: any; PrecipitationIntensity: any; PrecipitationType: any; }; Night: { Icon: any; IconPhrase: any; HasPrecipitation: any; PrecipitationIntensity: any; PrecipitationType: any; }; Date: string | number | Date; })=>{
+     setWeatherInfo(weather.data.DailyForecasts.map((dayliF: { Temperature: { Minimum: { Value: any; Unit: any; }; 
+      Maximum: { Value: any; }; }; Day: { Icon: any; IconPhrase: any; HasPrecipitation: any; PrecipitationIntensity: any;
+      PrecipitationType: any; }; Night: { Icon: any; IconPhrase: any; HasPrecipitation: any; PrecipitationIntensity: any;
+      PrecipitationType: any; }; Date: string | number | Date; })=>{
       return{
         Temperature: {
           min: dayliF.Temperature.Minimum.Value,
@@ -82,7 +78,7 @@ const App = () =>{
         },
         Time: {
           day: weekDay[new Date(dayliF.Date).getDay()],
-          month: month[new Date(dayliF.Date).getMinutes()],
+          month: month[new Date(dayliF.Date).getMonth()],
           time: new Date().toLocaleString('en-us', { hour: '2-digit', minute: '2-digit'}),
           date: new Date(dayliF.Date).getDate()
         },

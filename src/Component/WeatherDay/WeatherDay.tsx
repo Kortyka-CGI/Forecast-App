@@ -17,7 +17,7 @@ export const WeatherDay: React.FC<WeatherType> = (props) =>{
                 return date+"th"
         }
     }
-      
+      console.log(props.Time.month)
     return (<>
     <div className="weather-day">
         <div className="header">
