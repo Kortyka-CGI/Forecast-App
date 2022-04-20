@@ -23,13 +23,14 @@ export const WeatherDay: React.FC<WeatherType> = (props) =>{
         <div className="header">
            <h5>{props.Time.day}</h5>
            <div className="header-text">
-               {`${props.Time.month} ${setDate(props.Time.date)}, ${props.Time.time} `}
+               {`${props.Time.month} ${setDate(props.Time.date)}, ${props.Time.time}`}
            </div>
         </div>
-       <img src ={`https://developer.accuweather.com/sites/default/files/${setImageNumber(props.Day.icon)}-s.png`}/>
+       <img src ={`https://developer.accuweather.com/sites/default/files/${setImageNumber(props.Day.icon)}-s.png`} 
+       alt="Image representing the weather"/>
        <div className="temperature">{`${props.Temperature.min} - ${props.Temperature.max} °${props.Temperature.Unit}`}</div>
-       <div className="description"> <span>Description: </span>{props.Day.IconPhrase}</div>
-       <div className="description"><span>Precipitation: </span>{props.Day.PrecipitationIntensity}</div> 
+       {props.Day.IconPhrase && <div className="description"> <span>Description: </span>{props.Day.IconPhrase}</div>}
+       {props.Day.PrecipitationIntensity && <div className="description"><span>Precipitation: </span>{props.Day.PrecipitationIntensity}</div> }
     </div>
     </>)
 }
