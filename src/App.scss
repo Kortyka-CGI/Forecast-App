@@ -1,0 +1,52 @@
+@import '../src/Component/Styling/index.scss';
+
+
+.container{
+  width: 100%;
+  text-align: center;
+  color: $clr-text;
+  display: block;
+  justify-content: center;
+
+  .header{
+    width: 90%;
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: $clr-backgroung ;
+    font-size: 2rem;
+    margin: auto;
+  }
+
+  .weather-container{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    margin: auto;
+  }
+  .search-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin: 2rem 0rem 0.5rem 0rem;
+    input{
+      height: 2.5rem;
+      width:30rem;
+      padding-left: 2rem;
+      font-weight: 500;
+      font-size: larger;
+      justify-content: center;
+    }
+    button{
+      height: 2.9rem;
+      width: 15rem;
+      font-size: larger;
+      font-weight: 500;
+    }
+  }
+  h3{
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 100;
+  }
+}
